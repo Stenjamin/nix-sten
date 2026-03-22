@@ -1,4 +1,4 @@
-{ config, pkgs, ...}:
+{ config, pkgs, ... }:
 
 {
 
@@ -8,9 +8,9 @@
   '';
 
   environment.systemPackages = with pkgs; [
-  pkgs.archipelago
-  pkgs.qusb2snes
-  pkgs.poptracker
+    archipelago
+    qusb2snes
+    poptracker
   ];
 
 
