@@ -16,6 +16,7 @@
           inherit system;
 	  modules = [
 	    ./configuration.nix
+	    ./archipelago.nix
 	  ];
 	};
       };
