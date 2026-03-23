@@ -139,6 +139,8 @@
   # Install OBS
   programs.obs-studio.enable = true;
 
+  # SSH agent
+  programs.ssh.startAgent = true;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
