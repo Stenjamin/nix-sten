@@ -15,7 +15,7 @@
     };
   };
 
-  outputs = {nixpkgs, home-manager, plasma-manager, ... }:
+  outputs = inputs@{nixpkgs, home-manager, plasma-manager, ... }:
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
