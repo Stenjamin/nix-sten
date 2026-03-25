@@ -2,7 +2,7 @@
   description = "Sten's Home Manager Configuration";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/unstable";
+    nixpkgs.url = "nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager";
