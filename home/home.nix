@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -73,4 +73,54 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  programs.steam.config = {
+    enable = true;
+    closeSteam = true;
+    defaultCompatTool = "GE-Proton";
+
+    apps = {
+      stardew = {
+        id = 413150;
+        compatTool = "GE-Proton";
+        launchOptions = {
+          env = {
+          PROTON_ENABLE_WAYLAND = true;
+          };
+	wrappers = [
+	  (lib.getExe pkgs.gamemode)
+	];
+        };
+      };
+      msoul = {
+        id = 2739990;
+        compatTool = "GE-Proton";
+        launchOptions = {
+          env = {
+            PROTON_ENABLE_WAYLAND = true;
+          };
+        };
+      };
+      superhexagon = {
+        id = 221640;
+        compatTool = "GE-Proton";
+        launchOptions = {
+          env = {
+            PROTON_ENABLE_WAYLAND = true;
+          };
+        };
+      };
+      tunic = {
+        id = 553420;
+	compatTool = "GE-Proton";
+	launchOptions = {
+	  env = {
+	  PROTON_ENABLE_WAYLAND = true;
+	  WINEDLLOVERRIDES = "winhttp=n,b";
+	  };
+        };
+      };
+    };
+
+  };
 }

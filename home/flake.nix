@@ -31,6 +31,7 @@
           inherit pkgs;
           modules = [
             inputs.plasma-manager.homeModules.plasma-manager
+            inputs.steam-config-nix.homeModules.default
             ./home.nix
             {
               home = {

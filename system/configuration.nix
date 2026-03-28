@@ -157,6 +157,7 @@
     transmission_4-qt
     pkgs.lsfg-vk
     pkgs.lsfg-vk-ui
+    nix-init
   ];
 
   # Enable flakes
