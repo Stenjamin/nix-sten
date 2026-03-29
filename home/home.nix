@@ -87,9 +87,9 @@
           env = {
           PROTON_ENABLE_WAYLAND = true;
           };
-	wrappers = [
-	  (lib.getExe pkgs.gamemode)
-	];
+          wrappers = [
+            (lib.getExe pkgs.gamemode)
+          ];
         };
       };
       msoul = {
@@ -112,15 +112,32 @@
       };
       tunic = {
         id = 553420;
-	compatTool = "GE-Proton";
-	launchOptions = {
-	  env = {
-	  PROTON_ENABLE_WAYLAND = true;
-	  WINEDLLOVERRIDES = "winhttp=n,b";
-	  };
+        compatTool = "GE-Proton";
+        launchOptions = {
+          env = {
+            PROTON_ENABLE_WAYLAND = true;
+            WINEDLLOVERRIDES = "winhttp=n,b";
+          };
+        };
+      };
+      hades = {
+        id = 1145360;
+        compatTool = "GE-Proton";
+        launchOptions = {
+          env = {
+            PROTON_ENABLE_WAYLAND = true;
+          };
+        };
+      };
+      vvvvvv = {
+        id = 70300;
+        compatTool = "GE-Proton";
+        launchOptions = {
+          env = {
+            PROTON_ENABLE_WAYLAND = true;
+          };
         };
       };
     };
-
   };
 }
