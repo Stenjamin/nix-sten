@@ -138,6 +138,15 @@
           };
         };
       };
+      atlyss = {
+        id = 2768430;
+        compatTool = "GE-Proton";
+        launchOptions = {
+          env = {
+            PROTON_ENABLE_WAYLAND = true;
+          };
+        };
+      };
     };
   };
 }

@@ -16,6 +16,7 @@
 
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelModules = [ "ntsync" ];
 
   networking.hostName = "sten-nix"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -138,6 +139,8 @@
 
   # Install OBS
   programs.obs-studio.enable = true;
+
+  programs.alvr.enable = true;
 
   # SSH agent
   programs.ssh.startAgent = true;

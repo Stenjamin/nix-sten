@@ -2,6 +2,9 @@
   lib,
   buildGoModule,
   fetchFromGitHub,
+  pkg-config,
+  gtk3,
+  libayatana-appindicator,
 }:
 
 buildGoModule (finalAttrs: {
@@ -15,9 +18,22 @@ buildGoModule (finalAttrs: {
     hash = "sha256-Rolm0dpn3+OnUu/OVwPdes9EM0DLZ28ksG5sDqSMKQI=";
   };
 
+  buildInputs = [
+    gtk3
+    libayatana-appindicator
+  ];
+  nativeBuildInputs = [
+    pkg-config
+  ];
+
   vendorHash = "sha256-o4CShxZ8HUL2zcIEcdhr7xTjuVUIPj86zyRTYgsC6dc=";
 
-  ldflags = [ "-s" ];
+  ldflags = [
+    "-s"
+    "-w"
+    "-X main.Version=v${finalAttrs.version}"
+    "-X main.Commit=v${finalAttrs.version}"
+  ];
 
   meta = {
     description = "SNES Interface with gRPC API";
