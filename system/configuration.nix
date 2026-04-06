@@ -153,14 +153,15 @@
     mangohud
     protonup-ng
     google-chrome
-    pkgs.ntfs3g
-    pkgs.git
-    pkgs.vlc
-    pkgs.obs-studio-plugins.obs-livesplit-one
+    ntfs3g
+    git
+    vlc
+    obs-studio-plugins.obs-livesplit-one
     transmission_4-qt
     pkgs.lsfg-vk
     pkgs.lsfg-vk-ui
     nix-init
+    bs-manager
   ];
 
   # Enable flakes
