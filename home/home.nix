@@ -147,6 +147,15 @@
           };
         };
       };
+      deltarune = {
+        id = 1671210;
+        compatTool = "GE-Proton";
+          launchOptions = {
+            env = {
+              PROTON_ENABLE_WAYLAND = true;
+            };
+          };
+      };
     };
   };
 }

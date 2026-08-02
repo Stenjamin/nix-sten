@@ -21,8 +21,14 @@
     (final: prev: {
       qusb2snes = pkgs.callPackage ./qusb2snes/package.nix {};
     })
-    (fginal: prev: {
+    (final: prev: {
       sni = pkgs.callPackage ./sni/package.nix {};
+    })
+    (final: prev: {
+      hydratextclient = pkgs.callPackage ./hydratextclient/package.nix {};
+    })
+    (final: prev: {
+      bizhawk = pkgs.callPackage ./bizhawk/default.nix {};
     })
   ];
 
@@ -31,6 +37,8 @@
     qusb2snes
     poptracker
     sni
+    hydratextclient
+    bizhawk
   ];
 
 }

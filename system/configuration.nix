@@ -129,18 +129,44 @@
   # Install goxlr utility
   services.goxlr-utility.enable = true;
 
+  nixpkgs.overlays = [
+    (final: prev: {
+      proton-ge-rtsp-bin = pkgs.callPackage ./proton-ge-rtsp/package.nix {};
+    })
+  ];
+
   # Install Steam
   programs.steam.enable = true;
   programs.steam.gamescopeSession.enable = true;
   programs.gamemode.enable = true;
   programs.steam.extraCompatPackages = with pkgs; [
     proton-ge-bin
-    ];
+    proton-ge-rtsp-bin
+  ];
+  programs.steam.extraPackages = with pkgs; [
+    hidapi
+  ];
+  hardware.steam-hardware.enable = true;
 
   # Install OBS
-  programs.obs-studio.enable = true;
+  programs.obs-studio = {
+    enable = true;
+    plugins = with pkgs.obs-studio-plugins; [
+        obs-pipewire-audio-capture
+        obs-livesplit-one
+        obs-multi-rtmp
+    ];
+  };
+
+
 
   programs.alvr.enable = true;
+  programs.alvr.openFirewall = true;
+
+  services.wivrn = {
+    enable = true;
+    openFirewall = true;
+  };
 
   # SSH agent
   programs.ssh.startAgent = true;
@@ -162,6 +188,10 @@
     pkgs.lsfg-vk-ui
     nix-init
     bs-manager
+    xrizer
+    telegram-desktop
+    kdePackages.kdenlive
+    flips
   ];
 
   # Enable flakes

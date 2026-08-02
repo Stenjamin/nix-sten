@@ -15,11 +15,11 @@
       nixosConfigurations = {
         sten-nix = lib.nixosSystem {
           inherit system;
-	  modules = [
-	    ./configuration.nix
-	    ./archipelago.nix
-	  ];
-	};
+          modules = [
+            ./configuration.nix
+            ./archipelago.nix
+          ];
+        };
       };
     };
 
