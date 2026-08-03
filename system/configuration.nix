@@ -193,6 +193,7 @@
     kdePackages.kdenlive
     flips
     unrar
+    lumafly
   ];
 
   # Enable flakes
