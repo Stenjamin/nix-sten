@@ -4,10 +4,6 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    /*bizhawk-src = {
-      url = "git+https://github.com/Stenjamin/BizHawk";
-      flake = false;
-    };*/
   };
 
   outputs = { self, nixpkgs, /*bizhawk-src,*/ ...} :
