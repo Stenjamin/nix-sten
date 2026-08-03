@@ -4,9 +4,13 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
+    /*bizhawk-src = {
+      url = "git+https://github.com/Stenjamin/BizHawk";
+      flake = false;
+    };*/
   };
 
-  outputs = { self, nixpkgs, ...} :
+  outputs = { self, nixpkgs, /*bizhawk-src,*/ ...} :
     let
       lib = nixpkgs.lib;
       system = "x86_64-linux";
@@ -19,6 +23,7 @@
             ./configuration.nix
             ./archipelago.nix
           ];
+           specialArgs = { inherit /*bizhawk-src,*/ system; };
         };
       };
     };

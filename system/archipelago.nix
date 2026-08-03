@@ -1,4 +1,14 @@
-{ config, pkgs, ... }:
+{ config, pkgs, system, /*bizhawk-src, fetchpatch,*/ ... }:
+
+let
+  bizhawk = pkgs.fetchFromGitHub {
+   owner = "TASEmulators";
+   repo  = "BizHawk";
+   rev   = "master";
+   hash  = "sha256-spgoAP1FIBn98DKAWUCnX2MOVKT1yrFH993pF3erf5o=";
+  };
+  emuhawk = (import bizhawk {inherit system; inherit pkgs; }).emuhawk-2_11_1-bin;
+in
 
 {
 
@@ -27,18 +37,20 @@
     (final: prev: {
       hydratextclient = pkgs.callPackage ./hydratextclient/package.nix {};
     })
-    (final: prev: {
-      bizhawk = pkgs.callPackage ./bizhawk/default.nix {};
-    })
+    /*(final: prev: {
+      bizhawk = pkgs.callPackage "${bizhawk-src}/default.nix" {};
+    })*/
+
   ];
 
   environment.systemPackages = with pkgs; [
     archipelago
     qusb2snes
     poptracker
-    sni
-    hydratextclient
-    bizhawk
+    # sni
+    # hydratextclient
+    # lua5_4
+    # bizhawk.emuhawk-2_9_1-bin
+    emuhawk
   ];
-
 }

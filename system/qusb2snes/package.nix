@@ -1,3 +1,5 @@
+/* huge thanks to Jademalo for making this build qfile2snes too */
+
 {
   stdenv,
   lib,
