@@ -192,6 +192,7 @@
     telegram-desktop
     kdePackages.kdenlive
     flips
+    unrar
   ];
 
   # Enable flakes
