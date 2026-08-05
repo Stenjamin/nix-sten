@@ -23,7 +23,7 @@
             ./configuration.nix
             ./archipelago.nix
           ];
-          specialArgs = { inherit bizhawk-src, system; };
+          specialArgs = { inherit bizhawk-src;, inherit system; };
         };
       };
     };
