@@ -1,4 +1,4 @@
-{ config, pkgs, system, /*bizhawk-src, fetchpatch,*/ ... }:
+{ config, pkgs, system, bizhawk-src, ... }:
 
 let
   bizhawk = pkgs.fetchFromGitHub {
@@ -7,7 +7,7 @@ let
    rev   = "master";
    hash  = "sha256-spgoAP1FIBn98DKAWUCnX2MOVKT1yrFH993pF3erf5o=";
   };
-  emuhawk = (import bizhawk {inherit system; inherit pkgs; }).emuhawk-2_11_1-bin;
+  emuhawk = (import bizhawk-src {inherit system; inherit pkgs; }).emuhawk-2_11_1-bin;
 in
 
 {
