@@ -4,7 +4,7 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    bizhawk-src = bizhawk-src = {
+    bizhawk-src = {
       url = "git+https://github.com/TASEmulators/BizHawk";
       flake = false;
     };
