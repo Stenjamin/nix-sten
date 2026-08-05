@@ -4,11 +4,9 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
-    bizhawk-src = pkgs.fetchFromGitHub {
-      owner = "TASEmulators";
-      repo  = "BizHawk";
-      rev   = "master";
-      hash  = "sha256-spgoAP1FIBn98DKAWUCnX2MOVKT1yrFH993pF3erf5o=";
+    bizhawk-src = bizhawk-src = {
+      url = "git+https://github.com/TASEmulators/BizHawk";
+      flake = false;
     };
   };
 
