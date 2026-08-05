@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "bizhawk-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1785863323,
+        "narHash": "sha256-ossbY1BEW1N+X/j64SctZXwnG/IYQrHXVDHbMwzAXEg=",
+        "ref": "refs/heads/master",
+        "rev": "8557e3d779b224c52c2a4b5403bab16da30312f1",
+        "revCount": 23707,
+        "type": "git",
+        "url": "https://github.com/TASEmulators/BizHawk"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://github.com/TASEmulators/BizHawk"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1785571196,
@@ -16,6 +32,7 @@
     },
     "root": {
       "inputs": {
+        "bizhawk-src": "bizhawk-src",
         "nixpkgs": "nixpkgs"
       }
     }

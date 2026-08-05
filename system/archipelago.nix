@@ -1,12 +1,6 @@
 { config, pkgs, system, bizhawk-src, ... }:
 
 let
-  /*bizhawk = pkgs.fetchFromGitHub {
-   owner = "TASEmulators";
-   repo  = "BizHawk";
-   rev   = "master";
-   hash  = "sha256-spgoAP1FIBn98DKAWUCnX2MOVKT1yrFH993pF3erf5o=";
-  };*/
   emuhawk = (import bizhawk-src {inherit system; inherit pkgs; }).emuhawk-2_11_1-bin;
 in
 
@@ -37,9 +31,6 @@ in
     (final: prev: {
       hydratextclient = pkgs.callPackage ./hydratextclient/package.nix {};
     })
-    /*(final: prev: {
-      bizhawk = pkgs.callPackage "${bizhawk-src}/default.nix" {};
-    })*/
 
   ];
 
