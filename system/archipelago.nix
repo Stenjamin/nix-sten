@@ -24,6 +24,7 @@ in
           chmod +w $out/lib/opt/Archipelago/lib/worlds
           rm $out/lib/opt/Archipelago/lib/worlds/tunic.apworld
           rm $out/lib/opt/Archipelago/lib/worlds/jakanddaxter.apworld
+          rm $out/lib/opt/Archipelago/lib/worlds/kh1.apworld
           '';
       });
     })
