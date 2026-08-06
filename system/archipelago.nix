@@ -20,6 +20,11 @@ in
           url = "https://github.com/ArchipelagoMW/Archipelago/releases/download/0.6.7/Archipelago_0.6.7_linux-x86_64.AppImage";
           hash = "sha256-a5UazzqGu7q4Zg1AYHnbQjCTQNdcNaL/gZUjYV3Rk5Q=";
         };
+        postInstall = ''
+          chmod +w $out/lib/opt/Archipelago/lib/worlds
+          rm $out/lib/opt/Archipelago/lib/worlds/tunic.apworld
+          rm $out/lib/opt/Archipelago/lib/worlds/jakanddaxter.apworld
+          '';
       });
     })
     (final: prev: {
