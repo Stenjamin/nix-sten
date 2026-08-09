@@ -115,7 +115,7 @@
         compatTool = "GE-Proton";
         launchOptions = {
           env = {
-            PROTON_ENABLE_WAYLAND = true;
+            # PROTON_ENABLE_WAYLAND = true;
             WINEDLLOVERRIDES = "winhttp=n,b";
           };
         };
