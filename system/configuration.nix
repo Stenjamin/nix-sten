@@ -200,6 +200,7 @@
     flips
     unrar
     lumafly
+    discordchatexporter-desktop
   ];
 
   # Enable flakes
